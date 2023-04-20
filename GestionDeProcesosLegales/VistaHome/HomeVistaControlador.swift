@@ -6,13 +6,14 @@
 //
 
 import UIKit
-
 protocol HomeVistaControladorProtocolo: AnyObject {
-    
+    func navegarHaciaVistaDetalle()
 }
 
-class HomeVistaControlador: UIViewController {   /// inyectamos las dependencias a traves de un Contructor
-    let cerebro: HomeCerebroProtocolo
+class HomeVistaControlador: UIViewController {
+    
+    private let cerebro: HomeCerebroProtocolo
+    
     init(cerebro: HomeCerebroProtocolo) {
         self.cerebro = cerebro
         super.init(nibName: nil, bundle: nil)
@@ -23,10 +24,33 @@ class HomeVistaControlador: UIViewController {   /// inyectamos las dependencias
     }
     
     override func loadView() {
-      self.view = HomeVistaConstructor.construya() ///asigna a la vista propia del view controller, el UIViewController tiene una var llamada view
+        let homeVista = HomeVistaConstructor.construya() ///asigna a la vista propia del view controller, el UIViewController tiene una var llamada view
+        homeVista.asignarJefe(self)
+        self.view = homeVista
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cerebro.asiganarVC(viewController: self)  ///cerebroHome su viewController soy yo
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Lista", style: .done, target: self, action: #selector(presentarVistaListado))
+    }
+    
+    @objc private func presentarVistaListado() {
+        self.navigationController?.pushViewController(ListadoDeProcesosConstructor.construya(), animated: true)
     }
 }
 
 extension HomeVistaControlador: HomeVistaControladorProtocolo {
-    
+    func navegarHaciaVistaDetalle() {
+        let vc = FormularioEdicionProcesoConstructor.construya()
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
 }
+
+extension HomeVistaControlador: JefeHomeVista {
+    func procesarToqueBotonConsultar() {
+        navegarHaciaVistaDetalle()
+    }
+}
+

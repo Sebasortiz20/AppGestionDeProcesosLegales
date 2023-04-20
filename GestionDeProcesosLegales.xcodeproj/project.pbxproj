@@ -7,7 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0D15E829EEF0A50003FC74 /* FormularioEdicionProcesoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15E729EEF0A50003FC74 /* FormularioEdicionProcesoViewController.swift */; };
+		FC0D15EA29EF42500003FC74 /* FormularioEdicionProcesoCerebro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15E929EF42500003FC74 /* FormularioEdicionProcesoCerebro.swift */; };
+		FC0D15ED29EF46050003FC74 /* FormularioEdicionProcesoVistaConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15EC29EF46050003FC74 /* FormularioEdicionProcesoVistaConstructor.swift */; };
+		FC0D15EF29EF464D0003FC74 /* FormularioEdicionProcesoVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15EE29EF464D0003FC74 /* FormularioEdicionProcesoVista.swift */; };
+		FC0D15F129EF47EA0003FC74 /* FormularioEdicionProcesoConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15F029EF47EA0003FC74 /* FormularioEdicionProcesoConstructor.swift */; };
+		FC0D15F429EF65590003FC74 /* ConstruirTextFieldRadicado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15F329EF65590003FC74 /* ConstruirTextFieldRadicado.swift */; };
+		FC0D15F629EF65A00003FC74 /* ConstruirSubvistaAzul.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15F529EF65A00003FC74 /* ConstruirSubvistaAzul.swift */; };
+		FC0D15F829EF67A50003FC74 /* ConstruirTextFieldTipoProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15F729EF67A50003FC74 /* ConstruirTextFieldTipoProceso.swift */; };
+		FC0D15FA29EF68530003FC74 /* ConstruirTextFieldEstadoProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15F929EF68530003FC74 /* ConstruirTextFieldEstadoProceso.swift */; };
+		FC0D15FC29EF68AB0003FC74 /* ConstruirTextFieldJuezACargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15FB29EF68AB0003FC74 /* ConstruirTextFieldJuezACargo.swift */; };
+		FC0D15FE29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15FD29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift */; };
+		FC0D160029EF69E80003FC74 /* ConstruirTextFieldDemandado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15FF29EF69E80003FC74 /* ConstruirTextFieldDemandado.swift */; };
+		FC0D160229EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D160129EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift */; };
+		FC0D160429F054DD0003FC74 /* ConstruirTextFieldId.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D160329F054DD0003FC74 /* ConstruirTextFieldId.swift */; };
+		FC63599529D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599429D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift */; };
+		FC63599729D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599629D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift */; };
+		FC63599929D37BD300B04E02 /* ConstruirLabelTipoProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599829D37BD300B04E02 /* ConstruirLabelTipoProceso.swift */; };
+		FC63599B29D37BF700B04E02 /* ConstruirLabelEstadoProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599A29D37BF700B04E02 /* ConstruirLabelEstadoProceso.swift */; };
+		FC63599D29D37C1B00B04E02 /* ConstruirLabelJuezACargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599C29D37C1B00B04E02 /* ConstruirLabelJuezACargo.swift */; };
+		FC63599F29D37C3B00B04E02 /* ConstruirLabelFechaInicioProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599E29D37C3B00B04E02 /* ConstruirLabelFechaInicioProceso.swift */; };
+		FC6359A129D37C5700B04E02 /* ConstruirLabelDemandado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6359A029D37C5700B04E02 /* ConstruirLabelDemandado.swift */; };
 		FC74BC1B29C4BA6800C72433 /* HomeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74BC1A29C4BA6800C72433 /* HomeStackView.swift */; };
+		FCAC077D29DDDBB300EFDE2F /* ProcesoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC077C29DDDBB300EFDE2F /* ProcesoTableViewCell.swift */; };
+		FCB9302529DF31AA00A18412 /* ComandoListarProcesos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9302429DF31AA00A18412 /* ComandoListarProcesos.swift */; };
+		FCB9302729DF329500A18412 /* ComandoEliminarProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9302629DF329500A18412 /* ComandoEliminarProceso.swift */; };
+		FCB9302929DF332500A18412 /* ComandoAgregarProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9302829DF332500A18412 /* ComandoAgregarProceso.swift */; };
+		FCB9302B29DF382F00A18412 /* ComandoActualizarProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9302A29DF382F00A18412 /* ComandoActualizarProceso.swift */; };
+		FCBCBFEA29E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFE929E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift */; };
+		FCBCBFEC29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFEB29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift */; };
+		FCBCBFEE29E5F01D000DE61B /* ListadoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFED29E5F01D000DE61B /* ListadoLabel.swift */; };
+		FCBCBFF229E7290D000DE61B /* ProcesoDominio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFF129E7290D000DE61B /* ProcesoDominio.swift */; };
+		FCBCBFF429E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFF329E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift */; };
 		FCEA963729C21DCB00BA75F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA963629C21DCB00BA75F5 /* AppDelegate.swift */; };
 		FCEA963929C21DCB00BA75F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA963829C21DCB00BA75F5 /* SceneDelegate.swift */; };
 		FCEA964029C21DCE00BA75F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEA963F29C21DCE00BA75F5 /* Assets.xcassets */; };
@@ -28,6 +59,14 @@
 		FCEA967C29C2C36800BA75F5 /* DetallesConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA967B29C2C36800BA75F5 /* DetallesConstructor.swift */; };
 		FCEA967E29C2C4F200BA75F5 /* DetallesVistaConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA967D29C2C4F200BA75F5 /* DetallesVistaConstructor.swift */; };
 		FCEA968029C2C58200BA75F5 /* DetallesVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA967F29C2C58200BA75F5 /* DetallesVista.swift */; };
+		FCF1E77229D4D06400C12C90 /* DBProcesosDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E77029D4D06400C12C90 /* DBProcesosDataModel.xcdatamodeld */; };
+		FCF1E77529D4E65500C12C90 /* ListadoDeProcesosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E77429D4E65500C12C90 /* ListadoDeProcesosViewController.swift */; };
+		FCF1E77729D4E68200C12C90 /* ListadoDeProcesosCerebro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E77629D4E68200C12C90 /* ListadoDeProcesosCerebro.swift */; };
+		FCF1E77929D4E69D00C12C90 /* ListadoDeProcesosConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E77829D4E69D00C12C90 /* ListadoDeProcesosConstructor.swift */; };
+		FCF1E77B29D4E6C400C12C90 /* ListadoDeProcesosVistaConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E77A29D4E6C400C12C90 /* ListadoDeProcesosVistaConstructor.swift */; };
+		FCF1E77D29D4E6E600C12C90 /* ListadoDeProcesosVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E77C29D4E6E600C12C90 /* ListadoDeProcesosVista.swift */; };
+		FCF1E78729D5168E00C12C90 /* DBProceso+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E78529D5168E00C12C90 /* DBProceso+CoreDataClass.swift */; };
+		FCF1E78829D5168E00C12C90 /* DBProceso+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1E78629D5168E00C12C90 /* DBProceso+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +87,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC0D15E729EEF0A50003FC74 /* FormularioEdicionProcesoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularioEdicionProcesoViewController.swift; sourceTree = "<group>"; };
+		FC0D15E929EF42500003FC74 /* FormularioEdicionProcesoCerebro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularioEdicionProcesoCerebro.swift; sourceTree = "<group>"; };
+		FC0D15EC29EF46050003FC74 /* FormularioEdicionProcesoVistaConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularioEdicionProcesoVistaConstructor.swift; sourceTree = "<group>"; };
+		FC0D15EE29EF464D0003FC74 /* FormularioEdicionProcesoVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularioEdicionProcesoVista.swift; sourceTree = "<group>"; };
+		FC0D15F029EF47EA0003FC74 /* FormularioEdicionProcesoConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularioEdicionProcesoConstructor.swift; sourceTree = "<group>"; };
+		FC0D15F329EF65590003FC74 /* ConstruirTextFieldRadicado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldRadicado.swift; sourceTree = "<group>"; };
+		FC0D15F529EF65A00003FC74 /* ConstruirSubvistaAzul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirSubvistaAzul.swift; sourceTree = "<group>"; };
+		FC0D15F729EF67A50003FC74 /* ConstruirTextFieldTipoProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldTipoProceso.swift; sourceTree = "<group>"; };
+		FC0D15F929EF68530003FC74 /* ConstruirTextFieldEstadoProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldEstadoProceso.swift; sourceTree = "<group>"; };
+		FC0D15FB29EF68AB0003FC74 /* ConstruirTextFieldJuezACargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldJuezACargo.swift; sourceTree = "<group>"; };
+		FC0D15FD29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldFechaInicioProceso.swift; sourceTree = "<group>"; };
+		FC0D15FF29EF69E80003FC74 /* ConstruirTextFieldDemandado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldDemandado.swift; sourceTree = "<group>"; };
+		FC0D160129EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldEstadoDelProceso.swift; sourceTree = "<group>"; };
+		FC0D160329F054DD0003FC74 /* ConstruirTextFieldId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldId.swift; sourceTree = "<group>"; };
+		FC63599429D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirSubvistaColorAzul.swift; sourceTree = "<group>"; };
+		FC63599629D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelNumeroRadicado.swift; sourceTree = "<group>"; };
+		FC63599829D37BD300B04E02 /* ConstruirLabelTipoProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelTipoProceso.swift; sourceTree = "<group>"; };
+		FC63599A29D37BF700B04E02 /* ConstruirLabelEstadoProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelEstadoProceso.swift; sourceTree = "<group>"; };
+		FC63599C29D37C1B00B04E02 /* ConstruirLabelJuezACargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelJuezACargo.swift; sourceTree = "<group>"; };
+		FC63599E29D37C3B00B04E02 /* ConstruirLabelFechaInicioProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelFechaInicioProceso.swift; sourceTree = "<group>"; };
+		FC6359A029D37C5700B04E02 /* ConstruirLabelDemandado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelDemandado.swift; sourceTree = "<group>"; };
 		FC74BC1A29C4BA6800C72433 /* HomeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStackView.swift; sourceTree = "<group>"; };
+		FCAC077C29DDDBB300EFDE2F /* ProcesoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcesoTableViewCell.swift; sourceTree = "<group>"; };
+		FCB9302429DF31AA00A18412 /* ComandoListarProcesos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandoListarProcesos.swift; sourceTree = "<group>"; };
+		FCB9302629DF329500A18412 /* ComandoEliminarProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandoEliminarProceso.swift; sourceTree = "<group>"; };
+		FCB9302829DF332500A18412 /* ComandoAgregarProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandoAgregarProceso.swift; sourceTree = "<group>"; };
+		FCB9302A29DF382F00A18412 /* ComandoActualizarProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandoActualizarProceso.swift; sourceTree = "<group>"; };
+		FCBCBFE929E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosBotonAgregar.swift; sourceTree = "<group>"; };
+		FCBCBFEB29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosBotonActualizar.swift; sourceTree = "<group>"; };
+		FCBCBFED29E5F01D000DE61B /* ListadoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoLabel.swift; sourceTree = "<group>"; };
+		FCBCBFF129E7290D000DE61B /* ProcesoDominio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcesoDominio.swift; sourceTree = "<group>"; };
+		FCBCBFF329E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaDBProcesoAProcesoDominio.swift; sourceTree = "<group>"; };
 		FCEA963329C21DCB00BA75F5 /* GestionDeProcesosLegales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestionDeProcesosLegales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA963629C21DCB00BA75F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCEA963829C21DCB00BA75F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +143,14 @@
 		FCEA967B29C2C36800BA75F5 /* DetallesConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesConstructor.swift; sourceTree = "<group>"; };
 		FCEA967D29C2C4F200BA75F5 /* DetallesVistaConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesVistaConstructor.swift; sourceTree = "<group>"; };
 		FCEA967F29C2C58200BA75F5 /* DetallesVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesVista.swift; sourceTree = "<group>"; };
+		FCF1E77129D4D06400C12C90 /* ProcesosDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProcesosDataModel.xcdatamodel; sourceTree = "<group>"; };
+		FCF1E77429D4E65500C12C90 /* ListadoDeProcesosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosViewController.swift; sourceTree = "<group>"; };
+		FCF1E77629D4E68200C12C90 /* ListadoDeProcesosCerebro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosCerebro.swift; sourceTree = "<group>"; };
+		FCF1E77829D4E69D00C12C90 /* ListadoDeProcesosConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosConstructor.swift; sourceTree = "<group>"; };
+		FCF1E77A29D4E6C400C12C90 /* ListadoDeProcesosVistaConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosVistaConstructor.swift; sourceTree = "<group>"; };
+		FCF1E77C29D4E6E600C12C90 /* ListadoDeProcesosVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosVista.swift; sourceTree = "<group>"; };
+		FCF1E78529D5168E00C12C90 /* DBProceso+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBProceso+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FCF1E78629D5168E00C12C90 /* DBProceso+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBProceso+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +178,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC0D15F229EF64CD0003FC74 /* VistaFormularioEdicionProceso */ = {
+			isa = PBXGroup;
+			children = (
+				FC0D15E729EEF0A50003FC74 /* FormularioEdicionProcesoViewController.swift */,
+				FC0D15E929EF42500003FC74 /* FormularioEdicionProcesoCerebro.swift */,
+				FC0D15F029EF47EA0003FC74 /* FormularioEdicionProcesoConstructor.swift */,
+				FC0D15EC29EF46050003FC74 /* FormularioEdicionProcesoVistaConstructor.swift */,
+				FC0D15EE29EF464D0003FC74 /* FormularioEdicionProcesoVista.swift */,
+				FC0D15F529EF65A00003FC74 /* ConstruirSubvistaAzul.swift */,
+				FC0D15F329EF65590003FC74 /* ConstruirTextFieldRadicado.swift */,
+				FC0D15F729EF67A50003FC74 /* ConstruirTextFieldTipoProceso.swift */,
+				FC0D15F929EF68530003FC74 /* ConstruirTextFieldEstadoProceso.swift */,
+				FC0D15FB29EF68AB0003FC74 /* ConstruirTextFieldJuezACargo.swift */,
+				FC0D15FD29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift */,
+				FC0D15FF29EF69E80003FC74 /* ConstruirTextFieldDemandado.swift */,
+				FC0D160129EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift */,
+				FC0D160329F054DD0003FC74 /* ConstruirTextFieldId.swift */,
+			);
+			path = VistaFormularioEdicionProceso;
+			sourceTree = "<group>";
+		};
 		FC74BC2029C505C000C72433 /* VistaDetallesDelProceso */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +207,13 @@
 				FCEA967B29C2C36800BA75F5 /* DetallesConstructor.swift */,
 				FCEA967D29C2C4F200BA75F5 /* DetallesVistaConstructor.swift */,
 				FCEA967F29C2C58200BA75F5 /* DetallesVista.swift */,
+				FC63599429D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift */,
+				FC63599629D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift */,
+				FC63599829D37BD300B04E02 /* ConstruirLabelTipoProceso.swift */,
+				FC63599A29D37BF700B04E02 /* ConstruirLabelEstadoProceso.swift */,
+				FC63599C29D37C1B00B04E02 /* ConstruirLabelJuezACargo.swift */,
+				FC63599E29D37C3B00B04E02 /* ConstruirLabelFechaInicioProceso.swift */,
+				FC6359A029D37C5700B04E02 /* ConstruirLabelDemandado.swift */,
 			);
 			path = VistaDetallesDelProceso;
 			sourceTree = "<group>";
@@ -115,6 +221,8 @@
 		FCEA962A29C21DCB00BA75F5 = {
 			isa = PBXGroup;
 			children = (
+				FCF1E78529D5168E00C12C90 /* DBProceso+CoreDataClass.swift */,
+				FCF1E78629D5168E00C12C90 /* DBProceso+CoreDataProperties.swift */,
 				FCEA963529C21DCB00BA75F5 /* GestionDeProcesosLegales */,
 				FCEA964C29C21DCE00BA75F5 /* GestionDeProcesosLegalesTests */,
 				FCEA965629C21DCE00BA75F5 /* GestionDeProcesosLegalesUITests */,
@@ -137,8 +245,17 @@
 			children = (
 				FCEA967629C271AF00BA75F5 /* VistaHome */,
 				FC74BC2029C505C000C72433 /* VistaDetallesDelProceso */,
+				FCF1E77329D4E29200C12C90 /* VistaListadoDeProcesos */,
+				FC0D15F229EF64CD0003FC74 /* VistaFormularioEdicionProceso */,
+				FCF1E77029D4D06400C12C90 /* DBProcesosDataModel.xcdatamodeld */,
 				FCEA963629C21DCB00BA75F5 /* AppDelegate.swift */,
 				FCEA963829C21DCB00BA75F5 /* SceneDelegate.swift */,
+				FCBCBFF129E7290D000DE61B /* ProcesoDominio.swift */,
+				FCBCBFF329E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift */,
+				FCB9302429DF31AA00A18412 /* ComandoListarProcesos.swift */,
+				FCB9302829DF332500A18412 /* ComandoAgregarProceso.swift */,
+				FCB9302629DF329500A18412 /* ComandoEliminarProceso.swift */,
+				FCB9302A29DF382F00A18412 /* ComandoActualizarProceso.swift */,
 				FCEA963F29C21DCE00BA75F5 /* Assets.xcassets */,
 				FCEA964129C21DCE00BA75F5 /* LaunchScreen.storyboard */,
 				FCEA964429C21DCE00BA75F5 /* Info.plist */,
@@ -177,6 +294,22 @@
 				FCEA967029C232B600BA75F5 /* HomeBotonConsultar.swift */,
 			);
 			path = VistaHome;
+			sourceTree = "<group>";
+		};
+		FCF1E77329D4E29200C12C90 /* VistaListadoDeProcesos */ = {
+			isa = PBXGroup;
+			children = (
+				FCF1E77429D4E65500C12C90 /* ListadoDeProcesosViewController.swift */,
+				FCF1E77629D4E68200C12C90 /* ListadoDeProcesosCerebro.swift */,
+				FCF1E77829D4E69D00C12C90 /* ListadoDeProcesosConstructor.swift */,
+				FCF1E77A29D4E6C400C12C90 /* ListadoDeProcesosVistaConstructor.swift */,
+				FCF1E77C29D4E6E600C12C90 /* ListadoDeProcesosVista.swift */,
+				FCAC077C29DDDBB300EFDE2F /* ProcesoTableViewCell.swift */,
+				FCBCBFE929E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift */,
+				FCBCBFEB29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift */,
+				FCBCBFED29E5F01D000DE61B /* ListadoLabel.swift */,
+			);
+			path = VistaListadoDeProcesos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,22 +442,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF1E77929D4E69D00C12C90 /* ListadoDeProcesosConstructor.swift in Sources */,
+				FCF1E77D29D4E6E600C12C90 /* ListadoDeProcesosVista.swift in Sources */,
+				FC63599929D37BD300B04E02 /* ConstruirLabelTipoProceso.swift in Sources */,
+				FC0D15F829EF67A50003FC74 /* ConstruirTextFieldTipoProceso.swift in Sources */,
+				FCBCBFEA29E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift in Sources */,
+				FCF1E78729D5168E00C12C90 /* DBProceso+CoreDataClass.swift in Sources */,
+				FC63599D29D37C1B00B04E02 /* ConstruirLabelJuezACargo.swift in Sources */,
+				FCB9302B29DF382F00A18412 /* ComandoActualizarProceso.swift in Sources */,
 				FCEA967E29C2C4F200BA75F5 /* DetallesVistaConstructor.swift in Sources */,
+				FC0D15E829EEF0A50003FC74 /* FormularioEdicionProcesoViewController.swift in Sources */,
 				FCEA967829C2C23700BA75F5 /* DetallesVistaControlador.swift in Sources */,
 				FCEA963729C21DCB00BA75F5 /* AppDelegate.swift in Sources */,
+				FCB9302529DF31AA00A18412 /* ComandoListarProcesos.swift in Sources */,
+				FC0D15FA29EF68530003FC74 /* ConstruirTextFieldEstadoProceso.swift in Sources */,
+				FC0D160429F054DD0003FC74 /* ConstruirTextFieldId.swift in Sources */,
 				FCEA967129C232B600BA75F5 /* HomeBotonConsultar.swift in Sources */,
 				FCEA966F29C227E300BA75F5 /* HomeVistaConstructor.swift in Sources */,
 				FCEA967C29C2C36800BA75F5 /* DetallesConstructor.swift in Sources */,
+				FCBCBFEC29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift in Sources */,
 				FCEA967A29C2C30200BA75F5 /* DetallesCerebro.swift in Sources */,
+				FC63599729D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift in Sources */,
+				FCB9302729DF329500A18412 /* ComandoEliminarProceso.swift in Sources */,
 				FCEA967329C23B1500BA75F5 /* HomeCampoDeTexto.swift in Sources */,
+				FC0D15F429EF65590003FC74 /* ConstruirTextFieldRadicado.swift in Sources */,
+				FC63599529D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift in Sources */,
+				FCB9302929DF332500A18412 /* ComandoAgregarProceso.swift in Sources */,
 				FC74BC1B29C4BA6800C72433 /* HomeStackView.swift in Sources */,
+				FCF1E77B29D4E6C400C12C90 /* ListadoDeProcesosVistaConstructor.swift in Sources */,
+				FCBCBFF429E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift in Sources */,
+				FC0D15EF29EF464D0003FC74 /* FormularioEdicionProcesoVista.swift in Sources */,
+				FC0D160229EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift in Sources */,
+				FC0D15F129EF47EA0003FC74 /* FormularioEdicionProcesoConstructor.swift in Sources */,
+				FCF1E78829D5168E00C12C90 /* DBProceso+CoreDataProperties.swift in Sources */,
 				FCEA967529C23B5500BA75F5 /* HomeLabelConsultarProceso.swift in Sources */,
+				FC0D15FE29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift in Sources */,
+				FCBCBFEE29E5F01D000DE61B /* ListadoLabel.swift in Sources */,
+				FC0D15ED29EF46050003FC74 /* FormularioEdicionProcesoVistaConstructor.swift in Sources */,
+				FC0D15F629EF65A00003FC74 /* ConstruirSubvistaAzul.swift in Sources */,
+				FCAC077D29DDDBB300EFDE2F /* ProcesoTableViewCell.swift in Sources */,
 				FCEA966B29C2254800BA75F5 /* HomeConstructor.swift in Sources */,
+				FC63599F29D37C3B00B04E02 /* ConstruirLabelFechaInicioProceso.swift in Sources */,
+				FC6359A129D37C5700B04E02 /* ConstruirLabelDemandado.swift in Sources */,
+				FCF1E77529D4E65500C12C90 /* ListadoDeProcesosViewController.swift in Sources */,
+				FCF1E77729D4E68200C12C90 /* ListadoDeProcesosCerebro.swift in Sources */,
 				FCEA966729C2230D00BA75F5 /* HomeVistaControlador.swift in Sources */,
 				FCEA963929C21DCB00BA75F5 /* SceneDelegate.swift in Sources */,
+				FC63599B29D37BF700B04E02 /* ConstruirLabelEstadoProceso.swift in Sources */,
 				FCEA968029C2C58200BA75F5 /* DetallesVista.swift in Sources */,
+				FCBCBFF229E7290D000DE61B /* ProcesoDominio.swift in Sources */,
+				FC0D160029EF69E80003FC74 /* ConstruirTextFieldDemandado.swift in Sources */,
+				FC0D15FC29EF68AB0003FC74 /* ConstruirTextFieldJuezACargo.swift in Sources */,
+				FC0D15EA29EF42500003FC74 /* FormularioEdicionProcesoCerebro.swift in Sources */,
 				FCEA966D29C225EF00BA75F5 /* HomeVista.swift in Sources */,
 				FCEA966929C224B200BA75F5 /* HomeCerebro.swift in Sources */,
+				FCF1E77229D4D06400C12C90 /* DBProcesosDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +828,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCF1E77029D4D06400C12C90 /* DBProcesosDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCF1E77129D4D06400C12C90 /* ProcesosDataModel.xcdatamodel */,
+			);
+			currentVersion = FCF1E77129D4D06400C12C90 /* ProcesosDataModel.xcdatamodel */;
+			path = DBProcesosDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FCEA962B29C21DCB00BA75F5 /* Project object */;
 }

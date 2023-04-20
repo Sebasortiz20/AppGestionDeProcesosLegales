@@ -12,8 +12,9 @@ protocol DetallesVistaControladorProtocolo: AnyObject {
 }
 
 class DetallesVistaControlador: UIViewController {
-
-    let cerebro: DetallesCerebroProtocolo
+    
+    private let cerebro: DetallesCerebroProtocolo
+    
     init(cerebro: DetallesCerebroProtocolo) {
         self.cerebro = cerebro
         super.init(nibName: nil, bundle: nil)
@@ -25,6 +26,11 @@ class DetallesVistaControlador: UIViewController {
     
     override func loadView() {
         self.view = DetallesVistaConstructor.construya()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cerebro.asiganarVC(viewController: self) ///cerebroDetalles su viewController soy yo
     }
 }
 

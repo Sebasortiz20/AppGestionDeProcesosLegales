@@ -1,0 +1,213 @@
+//
+//  ListadoDeProcesosVista.swift
+//  GestionDeProcesosLegales
+//
+//  Created by sebas  on 29/03/23.
+//
+
+import UIKit
+
+protocol JefeListadoDeProcesosVista: AnyObject {
+    func procesarToqueBotonAgregar()
+    func procesarToqueBotonActualizar()
+}
+
+protocol ListadoDeProcesosVistaProtocol where Self: UIView {
+    func asignarJefe(_ jefe: JefeListadoDeProcesosVista)
+    func actualizarTabla()
+}
+
+class ListadoDeProcesosVista: UIView {
+    
+    let tableView = UITableView()
+    
+    private struct Constantes {
+        static let ideintificadorCelda = "procesoCell"
+    }
+    
+    weak var viewController: UIViewController?
+    private weak var miJefe: JefeListadoDeProcesosVista?
+    private let cerebro: ListadoDeProcesosCerebroProtocol = ListadoDeProcesosCerebro()
+    private let comandoAgregarProceso: ComandoAgregarProcesoProtocol = ComandoAgregarProceso()
+    private let comandoEliminarProceso: ComandoEliminarProcesoProtocol = ComandoEliminarProceso()
+    private let botonAgregar = ListadoDeProcesosBotonAgregar()
+    private let botonActualizar = ListadoDeProcesosBotonActualizar()
+    private let tituloListado = ListadoLabel()
+    
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        configurarVistaPrincipal()
+        tableView.dataSource = self
+        tableView.delegate = self
+        cerebro.asignarListadoDeProcesosVista(self)
+        botonAgregar.asignarJefe(self)
+        botonActualizar.asignarJefe(self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    func configurarVistaPrincipal() {
+        agregarElementosALaVista()
+        personalizarInterfazDeUsuario()
+        posicionarElementosEnPantalla()
+    }
+    
+    func agregarElementosALaVista() {
+        addSubview(botonAgregar)
+        addSubview(botonActualizar)
+        addSubview(tituloListado)
+        addSubview(tableView)
+    }
+    
+    func personalizarInterfazDeUsuario(){
+        agregarColorAlaVista()
+        personalizarTabla()
+    }
+    
+    func agregarColorAlaVista() {
+        backgroundColor = .gray
+    }
+    
+    func personalizarTabla() {
+        tableView.backgroundColor = .cyan
+        tableView.separatorStyle = .none
+        tableView.register(ProcesoTableViewCell.self, forCellReuseIdentifier: Constantes.ideintificadorCelda )
+    }
+    
+    func posicionarElementosEnPantalla() {
+        posicionarBotonAgregar()
+        posicionarBotonActualizar()
+        posicionarTitulo()
+        posicionarTabla()
+    }
+    
+    func posicionarBotonAgregar() {
+        botonAgregar.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            botonAgregar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            botonAgregar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)
+        ])
+    }
+    
+    func posicionarBotonActualizar() {
+        botonActualizar.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            botonActualizar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            botonActualizar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)
+        ])
+    }
+    
+    func posicionarTitulo() {
+        tituloListado.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tituloListado.centerXAnchor.constraint(equalTo: centerXAnchor),
+            tituloListado.centerYAnchor.constraint(equalTo: botonAgregar.centerYAnchor)
+        ])
+    }
+    
+    func posicionarTabla() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: botonAgregar.bottomAnchor, constant: 16),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    func actualizarTabla() {
+        tableView.reloadData()
+    }
+    
+    func agregarProcesoALaTabla(proceso: ProcesoDominio) {
+        cerebro.agregarProceso(proceso)
+        actualizarTabla()
+    }
+    
+    func mostrarPantallaDeEdicionParaProceso(_ proceso: ProcesoDominio, finalizarEdicion: @escaping (ProcesoDominio) -> Void) {
+        let vistaFormularioEdicionProceso = FormularioEdicionProcesoConstructor.construya()
+        viewController?.navigationController?.pushViewController(vistaFormularioEdicionProceso, animated: true)
+    }
+    
+    func mostrarPantallaDeEdicionParaProceso() {
+        let vistaFormularioEdicionProceso = FormularioEdicionProcesoConstructor.construya()
+        viewController?.navigationController?.pushViewController(vistaFormularioEdicionProceso, animated: true)
+    }
+}
+
+extension ListadoDeProcesosVista: ListadoDeProcesosVistaProtocol {
+    func asignarJefe(_ jefe: JefeListadoDeProcesosVista) {
+        miJefe = jefe
+    }
+}
+
+extension ListadoDeProcesosVista: ListadoDeProcesosBotonAgregarProtocol {
+    func botonAgregarPresionado() {
+        guard let miJefe = miJefe else {
+            return
+        }
+        miJefe.procesarToqueBotonAgregar()
+        let nuevoProceso = ProcesoDominio(id: "1234", tipoDeProceso: "34", estadoDelProceso: "56", juezACargo: "78", fechaInicioProceso: "9", demandado: "12", radicado: "radicado prueba")
+        comandoAgregarProceso.agregarProceso(nuevoProceso)
+        agregarProcesoALaTabla(proceso: nuevoProceso)
+    }
+}
+
+extension ListadoDeProcesosVista: ListadoDeProcesosBotonActualizarProtocol {
+    func botonActualizarPresionado() {
+        guard let miJefe = miJefe else {
+            return
+        }
+        miJefe.procesarToqueBotonActualizar()
+    }
+}
+
+extension ListadoDeProcesosVista: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cerebro.obtenerNumeroDeProcesos()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constantes.ideintificadorCelda, for: indexPath) as! ProcesoTableViewCellProtocol
+        let proceso = cerebro.obtenerProceso(de: indexPath.row)
+        cell.asignarRadicadoAlProceso(proceso.radicado)
+        cell.asignarIdAlProceso(proceso.id)
+        return cell as! UITableViewCell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let proceso = cerebro.obtenerProceso(de: indexPath.row)
+            comandoEliminarProceso.eliminarProceso(proceso: proceso)
+            cerebro.eliminarProceso(en: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } else if editingStyle == .insert {
+            let proceso = cerebro.obtenerProceso(de: indexPath.row)
+            self.mostrarPantallaDeEdicionParaProceso(proceso) { procesoActualizado in
+                self.cerebro.actualizarProceso(proceso: procesoActualizado, en: indexPath.row)
+                self.actualizarTabla()
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editarAccion = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
+            let proceso = self.cerebro.obtenerProceso(de: indexPath.row)
+          self.mostrarPantallaDeEdicionParaProceso(proceso) { procesoActualizado in
+                self.cerebro.actualizarProceso(proceso: procesoActualizado, en: indexPath.row)
+                self.actualizarTabla()
+            }
+            self.mostrarPantallaDeEdicionParaProceso()
+        }
+        editarAccion.backgroundColor = .blue
+        return UISwipeActionsConfiguration(actions: [editarAccion])
+    }
+}
+
+

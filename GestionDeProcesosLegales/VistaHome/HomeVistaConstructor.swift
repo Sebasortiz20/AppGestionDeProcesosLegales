@@ -8,12 +8,7 @@
 import UIKit
 
 class HomeVistaConstructor {
-    
     static func construya() -> HomeVistaProtocolo {
         return HomeVista()
     }
-    
-    
-    
-    
 }

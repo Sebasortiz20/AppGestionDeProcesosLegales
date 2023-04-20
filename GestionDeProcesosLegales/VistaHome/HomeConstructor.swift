@@ -11,6 +11,7 @@ class HomeConstructor {
     static func construya() -> UIViewController {
         let cerebro = HomeCerebro()
         let viewController = HomeVistaControlador(cerebro: cerebro)
+        cerebro.asiganarVC(viewController: viewController)
         return viewController
     }
 }

@@ -7,12 +7,25 @@
 
 import UIKit
 
-protocol HomeVistaProtocolo where Self: UIView {
-    
+protocol JefeHomeVista: AnyObject {
+    func procesarToqueBotonConsultar()
 }
 
-class HomeVista: UIView, HomeVistaProtocolo {
+protocol HomeVistaProtocolo where Self: UIView {
+    func asignarJefe(_ jefe: JefeHomeVista)
+}
 
+class HomeVista: UIView, JefeHomeBotonConsultar {
+    
+    private weak var miJefe: JefeHomeVista?
+    
+    private struct Constantes {
+        static let espacioSuperior: CGFloat = 40
+        static let espacioInferior: CGFloat = 100
+        static let margenIzquierdo: CGFloat = 20
+        static let margenDerecho: CGFloat = -20
+    }
+    
     private let mainStackView = HomeStackView()
     private let botonConsultar = HomeBotonConsultar()
     private let campoDeTextoRadicado = HomeCampoDeTexto()
@@ -23,17 +36,18 @@ class HomeVista: UIView, HomeVistaProtocolo {
         agregarColorDeFondoAlView()
         agregarSubvistas()
         agregarConstraints()
+        botonConsultar.asignarJefe(self)
     }
     
     required init?(coder: NSCoder) {
         fatalError()
     }
     
-  private func agregarColorDeFondoAlView() {
+    private func agregarColorDeFondoAlView() {
         backgroundColor =  .gray
     }
     
-   private func agregarSubvistas() {
+    private func agregarSubvistas() {
         self.addSubview(mainStackView)
         mainStackView.addArrangedSubview(labelConsultarProceso)
         mainStackView.addArrangedSubview(campoDeTextoRadicado)
@@ -41,14 +55,14 @@ class HomeVista: UIView, HomeVistaProtocolo {
         mainStackView.addArrangedSubview(UIView())              // espacio
     }
     
-   private func agregarConstraints() {
+    private func agregarConstraints() {
         agregarConstraintsStackView()
         agregarConstraintsLabel()
         agregarConstraintsCampoDeTexto()
         agregarConstraintsBoton()
     }
     
-   private func agregarConstraintsStackView() {
+    private func agregarConstraintsStackView() {
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.safeAreaLayoutGuide.topAnchor.constraint(equalTo: mainStackView.topAnchor),
@@ -58,34 +72,47 @@ class HomeVista: UIView, HomeVistaProtocolo {
         ])
     }
     
-   private func agregarConstraintsLabel() {
+    private func agregarConstraintsLabel() {
         labelConsultarProceso.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelConsultarProceso.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 40),
+            labelConsultarProceso.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: Constantes.espacioSuperior),
             labelConsultarProceso.centerXAnchor.constraint(equalTo: mainStackView.centerXAnchor),
             labelConsultarProceso.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
             labelConsultarProceso.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor)
         ])
     }
     
-   private func agregarConstraintsCampoDeTexto() {
+    private func agregarConstraintsCampoDeTexto() {
         campoDeTextoRadicado.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            campoDeTextoRadicado.topAnchor.constraint(equalTo: labelConsultarProceso.bottomAnchor,constant: 100),
-            campoDeTextoRadicado.leftAnchor.constraint(equalTo: mainStackView.leftAnchor, constant: 20),
-            campoDeTextoRadicado.rightAnchor.constraint(equalTo: mainStackView.rightAnchor, constant: -20),
+            campoDeTextoRadicado.topAnchor.constraint(equalTo: labelConsultarProceso.bottomAnchor,constant: Constantes.espacioInferior),
+            campoDeTextoRadicado.leftAnchor.constraint(equalTo: mainStackView.leftAnchor, constant: Constantes.margenIzquierdo),
+            campoDeTextoRadicado.rightAnchor.constraint(equalTo: mainStackView.rightAnchor, constant: Constantes.margenDerecho),
             campoDeTextoRadicado.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
     
-   private func agregarConstraintsBoton() {
+    private func agregarConstraintsBoton() {
         botonConsultar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            botonConsultar.topAnchor.constraint(equalTo: campoDeTextoRadicado.bottomAnchor,constant: 100),
-            botonConsultar.leftAnchor.constraint(equalTo: mainStackView.leftAnchor, constant: 20),
-            botonConsultar.rightAnchor.constraint(equalTo: mainStackView.rightAnchor, constant: -20),
+            botonConsultar.topAnchor.constraint(equalTo: campoDeTextoRadicado.bottomAnchor,constant: Constantes.espacioInferior),
+            botonConsultar.leftAnchor.constraint(equalTo: mainStackView.leftAnchor, constant: Constantes.margenIzquierdo),
+            botonConsultar.rightAnchor.constraint(equalTo: mainStackView.rightAnchor, constant: Constantes.margenDerecho),
             botonConsultar.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             botonConsultar.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
+    }
+}
+
+extension HomeVista: HomeVistaProtocolo {
+    func botonConsultarPresionado() {
+        guard let miJefe = miJefe else {
+            return
+        }
+        miJefe.procesarToqueBotonConsultar()
+    }
+    
+    func asignarJefe(_ jefe: JefeHomeVista) {
+        miJefe = jefe
     }
 }

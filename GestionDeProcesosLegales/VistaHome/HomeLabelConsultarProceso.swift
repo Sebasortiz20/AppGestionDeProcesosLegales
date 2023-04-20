@@ -10,9 +10,10 @@ import UIKit
 class HomeLabelConsultarProceso: UILabel {
     
     private struct Constantes {
-            static let tamañoDeFuente: CGFloat = 28.0
-            static let numeroLineas: Int = 2
-            static let texto = "Consultar Directamente Un Proceso"
+        static let tamañoDeFuente: CGFloat = 22
+        static let numeroLineas: Int = 2
+        static let texto = "Consultar Directamente Un Proceso"
+        static let colorTexto: UIColor = .black
     }
     
     init() {
@@ -27,7 +28,7 @@ class HomeLabelConsultarProceso: UILabel {
     private func iniciarLabel() {
         self.text = Constantes.texto
         self.font = UIFont.boldSystemFont(ofSize: Constantes.tamañoDeFuente)
-        self.textColor = .black
+        self.textColor = Constantes.colorTexto
         self.textAlignment = .center
         self.numberOfLines = Constantes.numeroLineas
     }
