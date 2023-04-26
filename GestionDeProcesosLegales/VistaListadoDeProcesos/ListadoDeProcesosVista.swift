@@ -10,6 +10,7 @@ import UIKit
 protocol JefeListadoDeProcesosVista: AnyObject {
     func procesarToqueBotonAgregar()
     func procesarToqueBotonActualizar()
+    func procesarToqueBotonEditar()
 }
 
 protocol ListadoDeProcesosVistaProtocol where Self: UIView {
@@ -36,9 +37,8 @@ class ListadoDeProcesosVista: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        configurarTableView()
         configurarVistaPrincipal()
-        tableView.dataSource = self
-        tableView.delegate = self
         cerebro.asignarListadoDeProcesosVista(self)
         botonAgregar.asignarJefe(self)
         botonActualizar.asignarJefe(self)
@@ -46,6 +46,10 @@ class ListadoDeProcesosVista: UIView {
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    func configurarTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func configurarVistaPrincipal() {
@@ -127,19 +131,20 @@ class ListadoDeProcesosVista: UIView {
     }
     
     func mostrarPantallaDeEdicionParaProceso(_ proceso: ProcesoDominio, finalizarEdicion: @escaping (ProcesoDominio) -> Void) {
-        let vistaFormularioEdicionProceso = FormularioEdicionProcesoConstructor.construya()
-        viewController?.navigationController?.pushViewController(vistaFormularioEdicionProceso, animated: true)
-    }
-    
-    func mostrarPantallaDeEdicionParaProceso() {
-        let vistaFormularioEdicionProceso = FormularioEdicionProcesoConstructor.construya()
-        viewController?.navigationController?.pushViewController(vistaFormularioEdicionProceso, animated: true)
+        botonEditarPresionado()
     }
 }
 
 extension ListadoDeProcesosVista: ListadoDeProcesosVistaProtocol {
     func asignarJefe(_ jefe: JefeListadoDeProcesosVista) {
         miJefe = jefe
+    }
+    
+    func botonEditarPresionado() {
+        guard let miJefe = miJefe else {
+            return
+        }
+        miJefe.procesarToqueBotonEditar()
     }
 }
 
@@ -149,7 +154,7 @@ extension ListadoDeProcesosVista: ListadoDeProcesosBotonAgregarProtocol {
             return
         }
         miJefe.procesarToqueBotonAgregar()
-        let nuevoProceso = ProcesoDominio(id: "1234", tipoDeProceso: "34", estadoDelProceso: "56", juezACargo: "78", fechaInicioProceso: "9", demandado: "12", radicado: "radicado prueba")
+        let nuevoProceso = ProcesoDominio(id: "1234" , tipoDeProceso: "Demanda Prueba", estadoDelProceso: "56", juezACargo: "78", fechaInicioProceso: "9", demandado: "12", radicado: "123456789")
         comandoAgregarProceso.agregarProceso(nuevoProceso)
         agregarProcesoALaTabla(proceso: nuevoProceso)
     }
@@ -161,6 +166,7 @@ extension ListadoDeProcesosVista: ListadoDeProcesosBotonActualizarProtocol {
             return
         }
         miJefe.procesarToqueBotonActualizar()
+        actualizarTabla()
     }
 }
 
@@ -173,8 +179,8 @@ extension ListadoDeProcesosVista: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constantes.ideintificadorCelda, for: indexPath) as! ProcesoTableViewCellProtocol
         let proceso = cerebro.obtenerProceso(de: indexPath.row)
         cell.asignarRadicadoAlProceso(proceso.radicado)
-        cell.asignarIdAlProceso(proceso.id)
-        return cell as! UITableViewCell
+        cell.asignarTipoDeProcesoAlProceso(proceso.tipoDeProceso)
+        return cell as UITableViewCell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -187,23 +193,20 @@ extension ListadoDeProcesosVista: UITableViewDataSource, UITableViewDelegate {
             comandoEliminarProceso.eliminarProceso(proceso: proceso)
             cerebro.eliminarProceso(en: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-        } else if editingStyle == .insert {
-            let proceso = cerebro.obtenerProceso(de: indexPath.row)
-            self.mostrarPantallaDeEdicionParaProceso(proceso) { procesoActualizado in
-                self.cerebro.actualizarProceso(proceso: procesoActualizado, en: indexPath.row)
-                self.actualizarTabla()
-            }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editarAccion = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
             let proceso = self.cerebro.obtenerProceso(de: indexPath.row)
-          self.mostrarPantallaDeEdicionParaProceso(proceso) { procesoActualizado in
+            self.mostrarPantallaDeEdicionParaProceso(proceso) { procesoActualizado in
                 self.cerebro.actualizarProceso(proceso: procesoActualizado, en: indexPath.row)
                 self.actualizarTabla()
             }
-            self.mostrarPantallaDeEdicionParaProceso()
         }
         editarAccion.backgroundColor = .blue
         return UISwipeActionsConfiguration(actions: [editarAccion])

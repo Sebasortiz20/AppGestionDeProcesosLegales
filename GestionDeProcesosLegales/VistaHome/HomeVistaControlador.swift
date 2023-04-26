@@ -43,7 +43,7 @@ class HomeVistaControlador: UIViewController {
 
 extension HomeVistaControlador: HomeVistaControladorProtocolo {
     func navegarHaciaVistaDetalle() {
-        let vc = FormularioEdicionProcesoConstructor.construya()
+        let vc = DetallesConstructor.construya()
         self.navigationController!.pushViewController(vc, animated: true)
     }
 }
@@ -53,4 +53,3 @@ extension HomeVistaControlador: JefeHomeVista {
         navegarHaciaVistaDetalle()
     }
 }
-

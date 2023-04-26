@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol ProcesoTableViewCellProtocol {
+protocol ProcesoTableViewCellProtocol where Self: UITableViewCell {
     func asignarRadicadoAlProceso(_ radicado: String)
-    func asignarIdAlProceso(_ Id: String)
+    func asignarTipoDeProcesoAlProceso(_ tipoDeProceso: String)
 }
 
 class ProcesoTableViewCell: UITableViewCell {
     
     let radicadoLabel = UILabel()
-    let idLabel = UILabel()
+    let tipoDeProcesoLabel = UILabel()
     
     var proceso: ProcesoDominio?
     
@@ -37,14 +37,14 @@ class ProcesoTableViewCell: UITableViewCell {
     private func configurarCelda() {
         agregarElementosEnLaCelda()
         personalizarRadicadoLabel()
-        personalizarIdLabel()
+        personalizarTipoDeProcesoLabel()
         posicionarRadicadoLabel()
-        posicionarIdLabel()
+        posicionarTipoDeProcesoLabel()
     }
     
     func agregarElementosEnLaCelda() {
         addSubview(radicadoLabel)
-        addSubview(idLabel)
+        addSubview(tipoDeProcesoLabel)
     }
     
     func personalizarRadicadoLabel() {
@@ -52,8 +52,8 @@ class ProcesoTableViewCell: UITableViewCell {
         radicadoLabel.text = Constantes.texto
     }
     
-    func personalizarIdLabel() {
-        idLabel.font = UIFont.systemFont(ofSize: Constantes.tamañoFuenteId)
+    func personalizarTipoDeProcesoLabel() {
+        tipoDeProcesoLabel.font = UIFont.systemFont(ofSize: Constantes.tamañoFuenteId)
     }
     
     func posicionarRadicadoLabel() {
@@ -64,19 +64,13 @@ class ProcesoTableViewCell: UITableViewCell {
         ])
     }
     
-    func posicionarIdLabel() {
-        idLabel.translatesAutoresizingMaskIntoConstraints = false
+    func posicionarTipoDeProcesoLabel() {
+        tipoDeProcesoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            idLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            idLabel.topAnchor.constraint(equalTo: radicadoLabel.bottomAnchor, constant: 8),
-            idLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            tipoDeProcesoLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            tipoDeProcesoLabel.topAnchor.constraint(equalTo: radicadoLabel.bottomAnchor, constant: 8),
+            tipoDeProcesoLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
-    }
-    
-    func configurarCeldaCon(proceso: ProcesoDominio) {
-        self.proceso = proceso
-        asignarRadicadoAlProceso(proceso.radicado)
-        asignarIdAlProceso(proceso.id)
     }
 }
 
@@ -85,7 +79,7 @@ extension ProcesoTableViewCell: ProcesoTableViewCellProtocol {
         radicadoLabel.text = "Radicado: \(radicado)"
     }
     
-    func asignarIdAlProceso(_ Id: String) {
-        idLabel.text = "ID: \(Id)"
+    func asignarTipoDeProcesoAlProceso(_ tipoDeProceso: String) {
+        tipoDeProcesoLabel.text = "TipoDeProceso: \(tipoDeProceso)"
     }
 }

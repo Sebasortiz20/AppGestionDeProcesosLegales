@@ -115,4 +115,8 @@ extension HomeVista: HomeVistaProtocolo {
     func asignarJefe(_ jefe: JefeHomeVista) {
         miJefe = jefe
     }
+    
+    func obtenerNumeroRadicacion() -> String? {
+        return campoDeTextoRadicado.text
+    }
 }

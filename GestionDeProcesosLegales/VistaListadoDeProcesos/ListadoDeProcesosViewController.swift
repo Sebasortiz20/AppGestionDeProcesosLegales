@@ -8,13 +8,15 @@
 import UIKit
 
 protocol ListadoDeProcesosViewControllerProtocol: AnyObject {
-    func botonAgregarPresionado()
-    func botonActualizarPresionado()
+    func navegarHaciaVistaFormularioEdicionProceso()
+    func PresentarError(con mensaje: String)
+    func navegarHaciaVistaAgregarProceso()
 }
 
 class ListadoDeProcesosViewController: UIViewController {
     
     private let cerebro: ListadoDeProcesosCerebroProtocol
+    private let vista = ListadoDeProcesosVista()
     
     init(cerebro: ListadoDeProcesosCerebroProtocol) {
         self.cerebro = cerebro
@@ -34,23 +36,38 @@ class ListadoDeProcesosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cerebro.asiganarVC(viewController: self)  /// cerebroListado su viewController soy yo
+        cerebro.procesarViewDidLoad()
     }
 }
 
 extension ListadoDeProcesosViewController: JefeListadoDeProcesosVista {
+    func procesarToqueBotonEditar() {
+        navegarHaciaVistaFormularioEdicionProceso()
+    }
+    
     func procesarToqueBotonActualizar() {
-        botonActualizarPresionado()
     }
     
     func procesarToqueBotonAgregar() {
-        botonAgregarPresionado()
+        navegarHaciaVistaAgregarProceso()
     }
 }
 
 extension ListadoDeProcesosViewController: ListadoDeProcesosViewControllerProtocol {
-    func botonActualizarPresionado() {
-        print("Actualizar")
+    func navegarHaciaVistaAgregarProceso() {
+        let vc = AgregarProcesoConstructor.construya()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func botonAgregarPresionado() {}
+    func PresentarError(con mensaje: String) {
+        let alerta = UIAlertController(title: "Error", message: mensaje, preferredStyle: .alert)
+        let accionOk = UIAlertAction(title: "OK", style: .default)
+        alerta.addAction(accionOk)
+        present(alerta, animated: true)
+    }
+    
+    func navegarHaciaVistaFormularioEdicionProceso() {
+        let vc = FormularioEdicionProcesoConstructor.construya()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class MapaDBProcesoAProcesoDominio {
     static func convertir(_ dbProceso: DBProceso) -> ProcesoDominio {
-        return ProcesoDominio(id: dbProceso.id ?? " ",
+        return ProcesoDominio(id:  dbProceso.id ?? " " ,
                               tipoDeProceso: dbProceso.tipoDeProceso ?? " ",
                               estadoDelProceso: dbProceso.estadoDelProceso ?? " ",
                               juezACargo: dbProceso.juezACargo ?? " ",

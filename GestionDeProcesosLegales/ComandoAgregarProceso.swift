@@ -19,7 +19,7 @@ extension ComandoAgregarProceso: ComandoAgregarProcesoProtocol {
     func agregarProceso(_ proceso: ProcesoDominio) {
         let nuevoDBProceso = DBProceso(context: contextoCoreData)
         nuevoDBProceso.radicado = proceso.radicado
-        nuevoDBProceso.id = proceso.id
+        nuevoDBProceso.id = proceso.id 
         do {
             try contextoCoreData.save()
         } catch {
