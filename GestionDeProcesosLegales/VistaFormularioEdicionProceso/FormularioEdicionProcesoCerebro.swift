@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 protocol FormularioEdicionProcesoCerebroProtocol {
     func asignarViewController(viewController: FormularioEdicionProcesoViewControllerProtocol)
     func configurarProcesoEnVista(_ proceso: ProcesoDominio)
@@ -16,18 +14,18 @@ protocol FormularioEdicionProcesoCerebroProtocol {
 
 class FormularioEdicionProcesoCerebro {
     private var proceso: ProcesoDominio?
-    private weak var ViewController: FormularioEdicionProcesoViewControllerProtocol?
+    private weak var viewController: FormularioEdicionProcesoViewControllerProtocol?
+    private let servicioWebDeBusquedaProceso: ServicioWebDeTraerProcesoProtocol = ServicioWebDeTraerProceso()
     var finalizarEdicion: ((ProcesoDominio) -> Void)?
 }
 
 extension FormularioEdicionProcesoCerebro: FormularioEdicionProcesoCerebroProtocol{
-    
-    
     func asignarViewController(viewController: FormularioEdicionProcesoViewControllerProtocol) {
-        ViewController = viewController
+        self.viewController = viewController
     }
+    
     func configurarProcesoEnVista(_ proceso: ProcesoDominio) {
-        guard let viewController = ViewController else {
+        guard let viewController = viewController else {
             return
         }
         viewController.configurarParaEditarProceso(proceso)

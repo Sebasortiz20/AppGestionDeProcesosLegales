@@ -14,7 +14,8 @@ protocol HomeCerebroProtocolo {
 
 class HomeCerebro {
     private weak var miViewController: HomeVistaControladorProtocolo?
-    
+    private let servicioWebDeBusquedaProceso: ServicioWebDeTraerProcesoProtocol = ServicioWebDeTraerProceso()
+    private var numeroRadicacion: String?
 }
 
 extension HomeCerebro: HomeCerebroProtocolo {
@@ -27,5 +28,5 @@ extension HomeCerebro: HomeCerebroProtocolo {
             return
         }
         miViewController.navegarHaciaVistaDetalle()
-    }
+    }    
 }

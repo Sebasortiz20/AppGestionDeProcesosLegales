@@ -1,5 +1,5 @@
 //
-//  ConstruirTextFieldId.swift
+//  ConstruirTextFieldID.swift
 //  GestionDeProcesosLegales
 //
 //  Created by sebas  on 19/04/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConstruirTextFieldId {
+class ConstruirTextFieldID {
     private struct Constantes {
         static let tamañoDeFuente: CGFloat = 16.0
         static let texto = "ID"

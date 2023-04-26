@@ -8,7 +8,6 @@
 import Foundation
 
 class FormularioEdicionProcesoVistaConstructor {
-    
     static func construya() -> FormularioEdicionProcesoVistaProtocolo {
         return FormularioEdicionProcesoVista()
     }

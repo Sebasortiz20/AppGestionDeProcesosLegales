@@ -1,20 +1,19 @@
 //
-//  FormularioEdicionProcesoVista.swift
+//  AgregarProcesoVista.swift
 //  GestionDeProcesosLegales
 //
-//  Created by sebas  on 18/04/23.
+//  Created by sebas  on 25/04/23.
 //
 
 import UIKit
 
-protocol FormularioEdicionProcesoVistaProtocolo where Self: UIView {
+protocol AgregarProcesoVistaProtocol where Self: UIView {
     
 }
 
-class FormularioEdicionProcesoVista: UIView, FormularioEdicionProcesoVistaProtocolo {
+class AgregarProcesoVista: UIView, AgregarProcesoVistaProtocol {
     
-    let subvistaAzul: UIView = ConstruirSubvistaAzul.crear()
-    let editarLabel: UILabel = ConstruirLabelEditar.crear()
+    let subvistaAzul: UIView = ConstruirSubvistaColorAzul.crear()
     let numeroRadicadoTextField = ConstruirTextFieldRadicado.crear()
     let tipoProcesoTextField = ConstruirTextFieldTipoProceso.crear()
     let juezACargoTextField = ConstruirTextFieldJuezACargo.crear()
@@ -23,16 +22,13 @@ class FormularioEdicionProcesoVista: UIView, FormularioEdicionProcesoVistaProtoc
     let demandadoTextField = ConstruirTextFieldDemandado.crear()
     let idTextField = ConstruirTextFieldID.crear()
     
-    
     private struct Constantes {
         static let margenIzquierdoDelTextField: CGFloat = 30
-        static let margenDerechoDelLabal: CGFloat = -30
         static let margenEntreTextFields: CGFloat = 20
         static let numeroRadicadoTextFieldTop: CGFloat = 50
         static let tipoProcesTextFieldTop: CGFloat = 30
         static let fechaInicioProcesoTextFieldTop: CGFloat = 30
         static let idTextFieldTop: CGFloat = 30
-        static let anchoLabelMenosMargen: CGFloat = -60
     }
     
     override init(frame: CGRect) {
@@ -58,14 +54,8 @@ class FormularioEdicionProcesoVista: UIView, FormularioEdicionProcesoVistaProtoc
             subvistaAzul.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             subvistaAzul.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
-        agregarLabelEditar()
         agregarTextFieldsASubvistaAzul()
-        UbicarLabel()
         ubicarTextFields()
-    }
-    
-    private func agregarLabelEditar() {
-        subvistaAzul.addSubview(editarLabel)
     }
     
     private func agregarTextFieldsASubvistaAzul() {
@@ -78,10 +68,6 @@ class FormularioEdicionProcesoVista: UIView, FormularioEdicionProcesoVistaProtoc
         subvistaAzul.addSubview(idTextField)
     }
     
-    private func UbicarLabel() {
-        ubicarLabelEditar()
-    }
-    
     private func ubicarTextFields() {
         ubicarTextFieldNumeroRadicado()
         ubicarTextFieldTipoDeProceso()
@@ -90,17 +76,6 @@ class FormularioEdicionProcesoVista: UIView, FormularioEdicionProcesoVistaProtoc
         ubicarTextFieldFechaInicioPreceso()
         ubicarTextFieldDemandado()
         ubicarTextFieldId()
-    }
-    
-    private func ubicarLabelEditar() {
-        editarLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            editarLabel.centerXAnchor.constraint(equalTo: subvistaAzul.centerXAnchor),
-            editarLabel.bottomAnchor.constraint(equalTo: numeroRadicadoTextField.topAnchor, constant: -Constantes.margenEntreTextFields),
-            editarLabel.leadingAnchor.constraint(greaterThanOrEqualTo: subvistaAzul.leadingAnchor, constant: Constantes.margenIzquierdoDelTextField),
-            editarLabel.trailingAnchor.constraint(lessThanOrEqualTo: subvistaAzul.trailingAnchor, constant: Constantes.margenDerechoDelLabal),
-            editarLabel.widthAnchor.constraint(lessThanOrEqualTo: subvistaAzul.widthAnchor, constant: Constantes.anchoLabelMenosMargen),
-        ])
     }
     
     private func ubicarTextFieldNumeroRadicado() {

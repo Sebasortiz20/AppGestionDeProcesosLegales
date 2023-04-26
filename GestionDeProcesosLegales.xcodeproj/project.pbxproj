@@ -20,7 +20,7 @@
 		FC0D15FE29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15FD29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift */; };
 		FC0D160029EF69E80003FC74 /* ConstruirTextFieldDemandado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D15FF29EF69E80003FC74 /* ConstruirTextFieldDemandado.swift */; };
 		FC0D160229EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D160129EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift */; };
-		FC0D160429F054DD0003FC74 /* ConstruirTextFieldId.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D160329F054DD0003FC74 /* ConstruirTextFieldId.swift */; };
+		FC0D160429F054DD0003FC74 /* ConstruirTextFieldID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D160329F054DD0003FC74 /* ConstruirTextFieldID.swift */; };
 		FC63599529D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599429D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift */; };
 		FC63599729D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599629D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift */; };
 		FC63599929D37BD300B04E02 /* ConstruirLabelTipoProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63599829D37BD300B04E02 /* ConstruirLabelTipoProceso.swift */; };
@@ -34,11 +34,20 @@
 		FCB9302729DF329500A18412 /* ComandoEliminarProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9302629DF329500A18412 /* ComandoEliminarProceso.swift */; };
 		FCB9302929DF332500A18412 /* ComandoAgregarProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9302829DF332500A18412 /* ComandoAgregarProceso.swift */; };
 		FCB9302B29DF382F00A18412 /* ComandoActualizarProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9302A29DF382F00A18412 /* ComandoActualizarProceso.swift */; };
+		FCB9ADA129F816A7002D8813 /* AgregarProcesoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ADA029F816A7002D8813 /* AgregarProcesoViewController.swift */; };
+		FCB9ADA329F816DA002D8813 /* AgregarProcesoCerebro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ADA229F816DA002D8813 /* AgregarProcesoCerebro.swift */; };
+		FCB9ADA529F816FC002D8813 /* AgregarProcesoConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ADA429F816FC002D8813 /* AgregarProcesoConstructor.swift */; };
+		FCB9ADA729F81729002D8813 /* AgregarProcesoVistaConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ADA629F81729002D8813 /* AgregarProcesoVistaConstructor.swift */; };
+		FCB9ADA929F81755002D8813 /* AgregarProcesoVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ADA829F81755002D8813 /* AgregarProcesoVista.swift */; };
+		FCB9ADAB29F83F93002D8813 /* ConstruirLabelEditar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ADAA29F83F93002D8813 /* ConstruirLabelEditar.swift */; };
 		FCBCBFEA29E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFE929E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift */; };
 		FCBCBFEC29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFEB29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift */; };
 		FCBCBFEE29E5F01D000DE61B /* ListadoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFED29E5F01D000DE61B /* ListadoLabel.swift */; };
 		FCBCBFF229E7290D000DE61B /* ProcesoDominio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFF129E7290D000DE61B /* ProcesoDominio.swift */; };
 		FCBCBFF429E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCBFF329E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift */; };
+		FCCB6A6629F6CE8D00737720 /* ServicioWebDeTraerProceso.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB6A6529F6CE8D00737720 /* ServicioWebDeTraerProceso.swift */; };
+		FCCB6A6829F7475F00737720 /* MapaAPIProcesoAProcesoDominio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB6A6729F7475F00737720 /* MapaAPIProcesoAProcesoDominio.swift */; };
+		FCCB6A6A29F7812400737720 /* EstructurasDeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB6A6929F7812400737720 /* EstructurasDeAPI.swift */; };
 		FCEA963729C21DCB00BA75F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA963629C21DCB00BA75F5 /* AppDelegate.swift */; };
 		FCEA963929C21DCB00BA75F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA963829C21DCB00BA75F5 /* SceneDelegate.swift */; };
 		FCEA964029C21DCE00BA75F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEA963F29C21DCE00BA75F5 /* Assets.xcassets */; };
@@ -100,7 +109,7 @@
 		FC0D15FD29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldFechaInicioProceso.swift; sourceTree = "<group>"; };
 		FC0D15FF29EF69E80003FC74 /* ConstruirTextFieldDemandado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldDemandado.swift; sourceTree = "<group>"; };
 		FC0D160129EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldEstadoDelProceso.swift; sourceTree = "<group>"; };
-		FC0D160329F054DD0003FC74 /* ConstruirTextFieldId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldId.swift; sourceTree = "<group>"; };
+		FC0D160329F054DD0003FC74 /* ConstruirTextFieldID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirTextFieldID.swift; sourceTree = "<group>"; };
 		FC63599429D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirSubvistaColorAzul.swift; sourceTree = "<group>"; };
 		FC63599629D3783100B04E02 /* ConstruirLabelNumeroRadicado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelNumeroRadicado.swift; sourceTree = "<group>"; };
 		FC63599829D37BD300B04E02 /* ConstruirLabelTipoProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelTipoProceso.swift; sourceTree = "<group>"; };
@@ -114,11 +123,20 @@
 		FCB9302629DF329500A18412 /* ComandoEliminarProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandoEliminarProceso.swift; sourceTree = "<group>"; };
 		FCB9302829DF332500A18412 /* ComandoAgregarProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandoAgregarProceso.swift; sourceTree = "<group>"; };
 		FCB9302A29DF382F00A18412 /* ComandoActualizarProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandoActualizarProceso.swift; sourceTree = "<group>"; };
+		FCB9ADA029F816A7002D8813 /* AgregarProcesoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarProcesoViewController.swift; sourceTree = "<group>"; };
+		FCB9ADA229F816DA002D8813 /* AgregarProcesoCerebro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarProcesoCerebro.swift; sourceTree = "<group>"; };
+		FCB9ADA429F816FC002D8813 /* AgregarProcesoConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarProcesoConstructor.swift; sourceTree = "<group>"; };
+		FCB9ADA629F81729002D8813 /* AgregarProcesoVistaConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarProcesoVistaConstructor.swift; sourceTree = "<group>"; };
+		FCB9ADA829F81755002D8813 /* AgregarProcesoVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarProcesoVista.swift; sourceTree = "<group>"; };
+		FCB9ADAA29F83F93002D8813 /* ConstruirLabelEditar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstruirLabelEditar.swift; sourceTree = "<group>"; };
 		FCBCBFE929E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosBotonAgregar.swift; sourceTree = "<group>"; };
 		FCBCBFEB29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoDeProcesosBotonActualizar.swift; sourceTree = "<group>"; };
 		FCBCBFED29E5F01D000DE61B /* ListadoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoLabel.swift; sourceTree = "<group>"; };
 		FCBCBFF129E7290D000DE61B /* ProcesoDominio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcesoDominio.swift; sourceTree = "<group>"; };
 		FCBCBFF329E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaDBProcesoAProcesoDominio.swift; sourceTree = "<group>"; };
+		FCCB6A6529F6CE8D00737720 /* ServicioWebDeTraerProceso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicioWebDeTraerProceso.swift; sourceTree = "<group>"; };
+		FCCB6A6729F7475F00737720 /* MapaAPIProcesoAProcesoDominio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaAPIProcesoAProcesoDominio.swift; sourceTree = "<group>"; };
+		FCCB6A6929F7812400737720 /* EstructurasDeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstructurasDeAPI.swift; sourceTree = "<group>"; };
 		FCEA963329C21DCB00BA75F5 /* GestionDeProcesosLegales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestionDeProcesosLegales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA963629C21DCB00BA75F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCEA963829C21DCB00BA75F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,7 +212,8 @@
 				FC0D15FD29EF69300003FC74 /* ConstruirTextFieldFechaInicioProceso.swift */,
 				FC0D15FF29EF69E80003FC74 /* ConstruirTextFieldDemandado.swift */,
 				FC0D160129EF6F4D0003FC74 /* ConstruirTextFieldEstadoDelProceso.swift */,
-				FC0D160329F054DD0003FC74 /* ConstruirTextFieldId.swift */,
+				FC0D160329F054DD0003FC74 /* ConstruirTextFieldID.swift */,
+				FCB9ADAA29F83F93002D8813 /* ConstruirLabelEditar.swift */,
 			);
 			path = VistaFormularioEdicionProceso;
 			sourceTree = "<group>";
@@ -216,6 +235,18 @@
 				FC6359A029D37C5700B04E02 /* ConstruirLabelDemandado.swift */,
 			);
 			path = VistaDetallesDelProceso;
+			sourceTree = "<group>";
+		};
+		FCB9AD9F29F81602002D8813 /* VIstaAgregarProceso */ = {
+			isa = PBXGroup;
+			children = (
+				FCB9ADA029F816A7002D8813 /* AgregarProcesoViewController.swift */,
+				FCB9ADA229F816DA002D8813 /* AgregarProcesoCerebro.swift */,
+				FCB9ADA429F816FC002D8813 /* AgregarProcesoConstructor.swift */,
+				FCB9ADA629F81729002D8813 /* AgregarProcesoVistaConstructor.swift */,
+				FCB9ADA829F81755002D8813 /* AgregarProcesoVista.swift */,
+			);
+			path = VIstaAgregarProceso;
 			sourceTree = "<group>";
 		};
 		FCEA962A29C21DCB00BA75F5 = {
@@ -245,13 +276,17 @@
 			children = (
 				FCEA967629C271AF00BA75F5 /* VistaHome */,
 				FC74BC2029C505C000C72433 /* VistaDetallesDelProceso */,
+				FCB9AD9F29F81602002D8813 /* VIstaAgregarProceso */,
 				FCF1E77329D4E29200C12C90 /* VistaListadoDeProcesos */,
 				FC0D15F229EF64CD0003FC74 /* VistaFormularioEdicionProceso */,
 				FCF1E77029D4D06400C12C90 /* DBProcesosDataModel.xcdatamodeld */,
+				FCCB6A6529F6CE8D00737720 /* ServicioWebDeTraerProceso.swift */,
 				FCEA963629C21DCB00BA75F5 /* AppDelegate.swift */,
 				FCEA963829C21DCB00BA75F5 /* SceneDelegate.swift */,
 				FCBCBFF129E7290D000DE61B /* ProcesoDominio.swift */,
 				FCBCBFF329E72E88000DE61B /* MapaDBProcesoAProcesoDominio.swift */,
+				FCCB6A6729F7475F00737720 /* MapaAPIProcesoAProcesoDominio.swift */,
+				FCCB6A6929F7812400737720 /* EstructurasDeAPI.swift */,
 				FCB9302429DF31AA00A18412 /* ComandoListarProcesos.swift */,
 				FCB9302829DF332500A18412 /* ComandoAgregarProceso.swift */,
 				FCB9302629DF329500A18412 /* ComandoEliminarProceso.swift */,
@@ -448,17 +483,22 @@
 				FC0D15F829EF67A50003FC74 /* ConstruirTextFieldTipoProceso.swift in Sources */,
 				FCBCBFEA29E5A1B8000DE61B /* ListadoDeProcesosBotonAgregar.swift in Sources */,
 				FCF1E78729D5168E00C12C90 /* DBProceso+CoreDataClass.swift in Sources */,
+				FCB9ADA929F81755002D8813 /* AgregarProcesoVista.swift in Sources */,
 				FC63599D29D37C1B00B04E02 /* ConstruirLabelJuezACargo.swift in Sources */,
 				FCB9302B29DF382F00A18412 /* ComandoActualizarProceso.swift in Sources */,
 				FCEA967E29C2C4F200BA75F5 /* DetallesVistaConstructor.swift in Sources */,
+				FCCB6A6629F6CE8D00737720 /* ServicioWebDeTraerProceso.swift in Sources */,
 				FC0D15E829EEF0A50003FC74 /* FormularioEdicionProcesoViewController.swift in Sources */,
+				FCCB6A6A29F7812400737720 /* EstructurasDeAPI.swift in Sources */,
 				FCEA967829C2C23700BA75F5 /* DetallesVistaControlador.swift in Sources */,
 				FCEA963729C21DCB00BA75F5 /* AppDelegate.swift in Sources */,
 				FCB9302529DF31AA00A18412 /* ComandoListarProcesos.swift in Sources */,
 				FC0D15FA29EF68530003FC74 /* ConstruirTextFieldEstadoProceso.swift in Sources */,
-				FC0D160429F054DD0003FC74 /* ConstruirTextFieldId.swift in Sources */,
+				FCB9ADA329F816DA002D8813 /* AgregarProcesoCerebro.swift in Sources */,
+				FC0D160429F054DD0003FC74 /* ConstruirTextFieldID.swift in Sources */,
 				FCEA967129C232B600BA75F5 /* HomeBotonConsultar.swift in Sources */,
 				FCEA966F29C227E300BA75F5 /* HomeVistaConstructor.swift in Sources */,
+				FCB9ADA729F81729002D8813 /* AgregarProcesoVistaConstructor.swift in Sources */,
 				FCEA967C29C2C36800BA75F5 /* DetallesConstructor.swift in Sources */,
 				FCBCBFEC29E5A253000DE61B /* ListadoDeProcesosBotonActualizar.swift in Sources */,
 				FCEA967A29C2C30200BA75F5 /* DetallesCerebro.swift in Sources */,
@@ -467,6 +507,7 @@
 				FCEA967329C23B1500BA75F5 /* HomeCampoDeTexto.swift in Sources */,
 				FC0D15F429EF65590003FC74 /* ConstruirTextFieldRadicado.swift in Sources */,
 				FC63599529D3765A00B04E02 /* ConstruirSubvistaColorAzul.swift in Sources */,
+				FCCB6A6829F7475F00737720 /* MapaAPIProcesoAProcesoDominio.swift in Sources */,
 				FCB9302929DF332500A18412 /* ComandoAgregarProceso.swift in Sources */,
 				FC74BC1B29C4BA6800C72433 /* HomeStackView.swift in Sources */,
 				FCF1E77B29D4E6C400C12C90 /* ListadoDeProcesosVistaConstructor.swift in Sources */,
@@ -480,6 +521,7 @@
 				FCBCBFEE29E5F01D000DE61B /* ListadoLabel.swift in Sources */,
 				FC0D15ED29EF46050003FC74 /* FormularioEdicionProcesoVistaConstructor.swift in Sources */,
 				FC0D15F629EF65A00003FC74 /* ConstruirSubvistaAzul.swift in Sources */,
+				FCB9ADA129F816A7002D8813 /* AgregarProcesoViewController.swift in Sources */,
 				FCAC077D29DDDBB300EFDE2F /* ProcesoTableViewCell.swift in Sources */,
 				FCEA966B29C2254800BA75F5 /* HomeConstructor.swift in Sources */,
 				FC63599F29D37C3B00B04E02 /* ConstruirLabelFechaInicioProceso.swift in Sources */,
@@ -490,11 +532,13 @@
 				FCEA963929C21DCB00BA75F5 /* SceneDelegate.swift in Sources */,
 				FC63599B29D37BF700B04E02 /* ConstruirLabelEstadoProceso.swift in Sources */,
 				FCEA968029C2C58200BA75F5 /* DetallesVista.swift in Sources */,
+				FCB9ADAB29F83F93002D8813 /* ConstruirLabelEditar.swift in Sources */,
 				FCBCBFF229E7290D000DE61B /* ProcesoDominio.swift in Sources */,
 				FC0D160029EF69E80003FC74 /* ConstruirTextFieldDemandado.swift in Sources */,
 				FC0D15FC29EF68AB0003FC74 /* ConstruirTextFieldJuezACargo.swift in Sources */,
 				FC0D15EA29EF42500003FC74 /* FormularioEdicionProcesoCerebro.swift in Sources */,
 				FCEA966D29C225EF00BA75F5 /* HomeVista.swift in Sources */,
+				FCB9ADA529F816FC002D8813 /* AgregarProcesoConstructor.swift in Sources */,
 				FCEA966929C224B200BA75F5 /* HomeCerebro.swift in Sources */,
 				FCF1E77229D4D06400C12C90 /* DBProcesosDataModel.xcdatamodeld in Sources */,
 			);

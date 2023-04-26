@@ -1,23 +1,22 @@
 //
-//  FormularioEdicionProcesoViewController.swift
+//  AgregarProcesoViewController.swift
 //  GestionDeProcesosLegales
 //
-//  Created by sebas  on 18/04/23.
+//  Created by sebas  on 25/04/23.
 //
 
 import UIKit
 
-protocol FormularioEdicionProcesoViewControllerProtocol: AnyObject {
-    func configurarParaEditarProceso(_ proceso: ProcesoDominio)
+protocol AgregarProcesoViewControllerProtocol: AnyObject {
+    
 }
 
-class FormularioEdicionProcesoViewController: UIViewController {
+class AgregarProcesoViewController: UIViewController  {
     
-    var finalizarEdicion: ((ProcesoDominio) -> Void)?
-    private let cerebro: FormularioEdicionProcesoCerebroProtocol
-    private let vista = FormularioEdicionProcesoVista()
+    private let cerebro: AgregarProcesoCerebroProtocol
+    private let vista = AgregarProcesoVista()
     
-    init(cerebro: FormularioEdicionProcesoCerebroProtocol) {
+    init(cerebro: AgregarProcesoCerebroProtocol) {
         self.cerebro = cerebro
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,7 +26,7 @@ class FormularioEdicionProcesoViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = FormularioEdicionProcesoVistaConstructor.construya()
+        self.view = AgregarProcesoVistaConstructor.construya()
     }
     
     override func viewDidLoad() {
@@ -35,14 +34,14 @@ class FormularioEdicionProcesoViewController: UIViewController {
         cerebro.asignarViewController(viewController: self)
         view.addSubview(vista)
         
-        let guardarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(guardar))
+        let guardarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(agregar))
         navigationItem.rightBarButtonItem = guardarButton
         
         let cancelarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelar))
         navigationItem.leftBarButtonItem = cancelarButton
     }
     
-    @objc private func guardar() {
+    @objc private func agregar() {
         guard let numeroRadicado = vista.numeroRadicadoTextField.text,
               let tipoProceso = vista.tipoProcesoTextField.text,
               let estadoProceso = vista.estadoProcesoTextField.text,
@@ -71,7 +70,6 @@ class FormularioEdicionProcesoViewController: UIViewController {
         
         let comandoActualizarProceso = ComandoActualizarProceso()
         comandoActualizarProceso.actualizarProceso(proceso: procesoModificado)
-        finalizarEdicion?(procesoModificado)
     }
     
     @objc private func cancelar() {
@@ -79,16 +77,6 @@ class FormularioEdicionProcesoViewController: UIViewController {
     }
 }
 
-extension FormularioEdicionProcesoViewController: FormularioEdicionProcesoViewControllerProtocol {
-    func configurarParaEditarProceso(_ proceso: ProcesoDominio) {
-        vista.numeroRadicadoTextField.text = String(proceso.radicado)
-        vista.tipoProcesoTextField.text = proceso.tipoDeProceso
-        vista.estadoProcesoTextField.text = proceso.estadoDelProceso
-        vista.juezACargoTextField.text = proceso.juezACargo
-        vista.fechaInicioProcesoTextField.text = proceso.fechaInicioProceso
-        vista.demandadoTextField.text = proceso.demandado
-        vista.idTextField.text = String(proceso.id)
-    }
+extension AgregarProcesoViewController: AgregarProcesoViewControllerProtocol {
+   
 }
-
-
