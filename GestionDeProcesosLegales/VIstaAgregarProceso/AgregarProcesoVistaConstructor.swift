@@ -12,3 +12,4 @@ class AgregarProcesoVistaConstructor {
         return AgregarProcesoVista()
     }
 }
+

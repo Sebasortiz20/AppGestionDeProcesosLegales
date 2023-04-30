@@ -28,5 +28,6 @@ extension HomeCerebro: HomeCerebroProtocolo {
             return
         }
         miViewController.navegarHaciaVistaDetalle()
-    }    
+    }
 }
+

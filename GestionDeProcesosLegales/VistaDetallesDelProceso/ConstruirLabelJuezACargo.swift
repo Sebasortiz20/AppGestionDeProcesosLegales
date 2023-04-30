@@ -28,3 +28,4 @@ class ConstruirLabelJuezACargo {
         label.text = Constantes.texto
     }
 }
+

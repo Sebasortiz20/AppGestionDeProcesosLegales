@@ -9,6 +9,7 @@ import Foundation
 
 protocol ServicioWebDeTraerProcesoProtocol {
     func obtenerProcesos(casoExito: @escaping ([ProcesoDominio]) -> (), casoError: @escaping (ErrorDeServicioWeb) -> ())
+    func asignarRadicado(numeroRadicado: String)
 }
 
 enum ErrorDeServicioWeb: Error {
@@ -19,10 +20,14 @@ enum ErrorDeServicioWeb: Error {
 }
 
 class ServicioWebDeTraerProceso {
-    
+    private var numeroRadicado: String = ""
 }
 
 extension ServicioWebDeTraerProceso: ServicioWebDeTraerProcesoProtocol {
+    
+    func asignarRadicado(numeroRadicado: String) {
+        self.numeroRadicado = numeroRadicado
+    }
     
     func obtenerProcesos(casoExito: @escaping ([ProcesoDominio]) -> (), casoError: @escaping (ErrorDeServicioWeb) -> ()) { /// se hace el llamado al servidor web                     ////  clase servicios web
         let configuracion = URLSessionConfiguration.default
@@ -55,10 +60,9 @@ extension ServicioWebDeTraerProceso: ServicioWebDeTraerProcesoProtocol {
             casoError(.datosNulosInesperados)
             return
         }
-        let decodificador = JSONDecoder()
         do {
-            let respuestaDecodificada = try decodificador.decode([RespuestaConsultaAPIProcesos].self, from: data)
-            let respuestaConvertida = MapaAPIProcesoAProcesoDominio.convertir(respuestaDecodificada)
+            let respuestaRadicado = try JSONDecoder().decode(Radicado.self, from: data)
+            let respuestaConvertida = MapaAPIProcesoAProcesoDominio.convertir(respuestaRadicado)
             casoExito(respuestaConvertida)
         } catch {
             print("Hubo un error decodificando la respuesta")
@@ -67,9 +71,8 @@ extension ServicioWebDeTraerProceso: ServicioWebDeTraerProcesoProtocol {
     }
     
     func obtenerSolicitud() -> URLRequest {
-        let numeroRadicacion = "05001233300020160102100"
-        let soloActivos = "true"
-        let urlString = "https://consultaprocesos.ramajudicial.gov.co:448/api/v2/Procesos/Consulta/NumeroRadicacion?numero=\(numeroRadicacion)&SoloActivos=\(soloActivos)&pagina=1"
+        let urlString = "https://consultaprocesos.ramajudicial.gov.co:448/api/v2/Procesos/Consulta/NumeroRadicacion?numero=\(self.numeroRadicado)&SoloActivos=false&pagina=1"
+        print(urlString)
         guard let url = URL(string: urlString) else {
             print("la URl no es valida")
             fatalError("La URL no es válida")

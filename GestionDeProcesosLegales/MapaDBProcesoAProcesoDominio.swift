@@ -26,3 +26,4 @@ class MapaDBProcesoAProcesoDominio {
         return procesosDominio
     }
 }
+

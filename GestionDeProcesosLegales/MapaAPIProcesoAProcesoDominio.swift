@@ -8,19 +8,16 @@
 import Foundation
 
 class MapaAPIProcesoAProcesoDominio {
-    static func convertir(_ respuestaConsultaAPIProcesos: [RespuestaConsultaAPIProcesos]) -> [ProcesoDominio] {
-        return respuestaConsultaAPIProcesos.flatMap { respuesta in
-            return respuesta.apiProcesos.map { apiProceso in
-                return ProcesoDominio(
-                    id: String(apiProceso.idProceso),
-                    tipoDeProceso: apiProceso.esPrivado ? "true" : "false",
-                    estadoDelProceso: apiProceso.soloActivos ? "true" : "false",
-                    juezACargo: apiProceso.despacho,
-                    fechaInicioProceso: apiProceso.fechaProceso,
-                    demandado: apiProceso.sujetosProcesales,
-                    radicado: String(apiProceso.llaveProceso))
-            }
+    static func convertir(_ respuestaConsultaAPIProcesos: Radicado) -> [ProcesoDominio] {
+        return respuestaConsultaAPIProcesos.procesos.compactMap { proceso in
+            return ProcesoDominio(
+                id: String(proceso.idProceso),
+                tipoDeProceso: proceso.esPrivado ? "true" : "false",
+                estadoDelProceso: respuestaConsultaAPIProcesos.parametros.soloActivos ? "true" : "false",
+                juezACargo: proceso.despacho,
+                fechaInicioProceso: proceso.fechaProceso,
+                demandado: proceso.sujetosProcesales,
+                radicado: String(respuestaConsultaAPIProcesos.parametros.numero))
         }
     }
 }
-

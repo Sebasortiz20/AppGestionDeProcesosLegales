@@ -13,6 +13,7 @@ protocol JefeHomeVista: AnyObject {
 
 protocol HomeVistaProtocolo where Self: UIView {
     func asignarJefe(_ jefe: JefeHomeVista)
+    func obtenerCampoTextoRadicado() -> String
 }
 
 class HomeVista: UIView, JefeHomeBotonConsultar {
@@ -109,6 +110,7 @@ extension HomeVista: HomeVistaProtocolo {
         guard let miJefe = miJefe else {
             return
         }
+
         miJefe.procesarToqueBotonConsultar()
     }
     
@@ -116,7 +118,7 @@ extension HomeVista: HomeVistaProtocolo {
         miJefe = jefe
     }
     
-    func obtenerNumeroRadicacion() -> String? {
-        return campoDeTextoRadicado.text
+    func obtenerCampoTextoRadicado() -> String {
+        return self.campoDeTextoRadicado.text ?? ""
     }
 }

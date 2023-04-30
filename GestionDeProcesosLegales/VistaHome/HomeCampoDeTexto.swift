@@ -8,7 +8,6 @@
 import UIKit
 
 class HomeCampoDeTexto: UITextField {
-    
     private struct Constantes {
         static let tamañoDeFuente: CGFloat = 18.0
         static let textoPlaceholder = "Radicado"

@@ -25,3 +25,4 @@ class HomeStackView: UIStackView {
         self.distribution = .equalCentering
     }
 }
+

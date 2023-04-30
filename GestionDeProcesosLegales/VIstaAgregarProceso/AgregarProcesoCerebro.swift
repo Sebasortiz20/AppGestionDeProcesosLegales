@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol AgregarProcesoCerebroProtocol {
     func asignarViewController(viewController: AgregarProcesoViewControllerProtocol)
 }
@@ -22,4 +21,5 @@ extension AgregarProcesoCerebro: AgregarProcesoCerebroProtocol{
         self.viewController = viewController
     }
 }
+
 

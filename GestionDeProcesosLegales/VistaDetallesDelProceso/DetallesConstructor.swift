@@ -8,9 +8,9 @@
 import UIKit
 
 class DetallesConstructor {
-    static func construya() -> UIViewController {
+    static func construya(_ numeroRadicado: String) -> UIViewController {
         let cerebro = DetallesCerebro()
-        let viewController = DetallesVistaControlador(cerebro: cerebro)
+        let viewController = DetallesVistaControlador(cerebro: cerebro, radicado: numeroRadicado)
         return viewController
     }
 }

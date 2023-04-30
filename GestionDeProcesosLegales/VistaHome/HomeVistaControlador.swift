@@ -13,6 +13,7 @@ protocol HomeVistaControladorProtocolo: AnyObject {
 class HomeVistaControlador: UIViewController {
     
     private let cerebro: HomeCerebroProtocolo
+    private var homeVista: HomeVistaProtocolo!
     
     init(cerebro: HomeCerebroProtocolo) {
         self.cerebro = cerebro
@@ -24,8 +25,8 @@ class HomeVistaControlador: UIViewController {
     }
     
     override func loadView() {
-        let homeVista = HomeVistaConstructor.construya() ///asigna a la vista propia del view controller, el UIViewController tiene una var llamada view
-        homeVista.asignarJefe(self)
+        self.homeVista = HomeVistaConstructor.construya() ///asigna a la vista propia del view controller, el UIViewController tiene una var llamada view
+        self.homeVista.asignarJefe(self)
         self.view = homeVista
     }
     
@@ -43,7 +44,7 @@ class HomeVistaControlador: UIViewController {
 
 extension HomeVistaControlador: HomeVistaControladorProtocolo {
     func navegarHaciaVistaDetalle() {
-        let vc = DetallesConstructor.construya()
+        let vc = DetallesConstructor.construya(self.homeVista.obtenerCampoTextoRadicado())
         self.navigationController!.pushViewController(vc, animated: true)
     }
 }

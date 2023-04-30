@@ -4,9 +4,6 @@
 //
 //  Created by sebas  on 29/03/23.
 //
-
-import Foundation
-
 protocol ListadoDeProcesosCerebroProtocol {
     func asiganarVC(viewController: ListadoDeProcesosViewControllerProtocol)
     func asignarListadoDeProcesosVista(_ listadoDeProcesosVista: ListadoDeProcesosVistaProtocol)
@@ -69,7 +66,7 @@ extension ListadoDeProcesosCerebro: ListadoDeProcesosCerebroProtocol {
         self.procesosDominio = procesos
     }
     
-    func obtenerProceso(de index: Int) -> ProcesoDominio { /// get post For index 
+    func obtenerProceso(de index: Int) -> ProcesoDominio { /// get post For index
         return procesosDominio[index]
     }
     

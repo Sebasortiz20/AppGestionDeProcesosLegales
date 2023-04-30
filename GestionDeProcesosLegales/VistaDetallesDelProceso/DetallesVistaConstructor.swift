@@ -12,3 +12,4 @@ class DetallesVistaConstructor {
         return DetallesVista()
     }
 }
+
